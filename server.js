@@ -17,4 +17,9 @@ connectDB();
 app.use("/auth", authRoutes);
 app.use("/products", productRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API is running on Render");
+});
+
+
 app.listen(PORT, () => console.log("Server running on port " + PORT));
