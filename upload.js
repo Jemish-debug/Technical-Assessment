@@ -1,5 +1,6 @@
 const express = require("express");
 const multer = require("multer");
+const PORT = process.env.PORT || 8087;
 
 const app = express();
 
@@ -19,6 +20,4 @@ app.post("/upload", upload.single("file"), (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server running at http://localhost:3000");
-});
+app.listen(PORT, () => console.log("Server running on port " + PORT));

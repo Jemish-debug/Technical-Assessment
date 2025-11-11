@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const PORT = process.env.PORT || 8087;
+
 
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
@@ -15,4 +17,4 @@ connectDB();
 app.use("/auth", authRoutes);
 app.use("/products", productRoutes);
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+app.listen(PORT, () => console.log("Server running on port " + PORT));
